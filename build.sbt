@@ -19,11 +19,11 @@ lazy val publishSettings = Seq(
   publishTo := {
     if (isSnapshot.value)
       Some(
-        ("snapshots" at Nexus.url + "/nexus/repository/snapshots/").withAllowInsecureProtocol(true)
+        ("snapshots" at Nexus.snaphotsRepo).withAllowInsecureProtocol(true)
       )
     else
       Some(
-        ("releases" at Nexus.url + "/nexus/repository/releases/").withAllowInsecureProtocol(true)
+        ("releases" at Nexus.releasesRepo).withAllowInsecureProtocol(true)
       )
   }
 )
